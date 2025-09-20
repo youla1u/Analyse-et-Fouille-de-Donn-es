@@ -5,7 +5,6 @@ Université d’Artois
 Faculté des Sciences Jean Perrin  
 
 **Présenté par :** Mohamed YOULA  
-**Supervisé par :** Mr. Karim Tabia  
 **Date :** 30/11/2020  
 
 ---
