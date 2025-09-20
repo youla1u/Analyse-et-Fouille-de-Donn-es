@@ -41,11 +41,6 @@ Nous avons estimé la distribution de la variable `Absenteeism_time_in_hours` av
 
 👉 Le **Polygone de fréquence** est le meilleur estimateur.
 
-### Boîtes à moustaches
-Avec et sans outliers :
-
-![Boxplot Outliers](images/boxplot_outliers.png)  
-![Boxplot Sans Outliers](images/boxplot_clean.png)
 
 ---
 
@@ -104,4 +99,3 @@ Quelques règles extraites avec **JRip** :
 
 ---
 
-## 📂 Structure du projet
