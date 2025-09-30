@@ -1,6 +1,6 @@
 # Fouille de Données pour la Prédiction de Classes d’Heures d’Absentéisme au Travail
 
-## 🎓 Contexte
+## Contexte
 Université d’Artois  
 Faculté des Sciences Jean Perrin  
  
@@ -9,7 +9,7 @@ Faculté des Sciences Jean Perrin
 
 ---
 
-## 📌 Introduction
+## Introduction
 Ce projet porte sur un jeu de données concernant l’absentéisme au travail disponible ici :  
 [Absenteeism_at_work.csv - UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Absenteeism+at+work)
 
@@ -28,7 +28,7 @@ Ce projet porte sur un jeu de données concernant l’absentéisme au travail di
 
 ---
 
-## 🔍 Analyse de la variable cible
+## Analyse de la variable cible
 Nous avons estimé la distribution de la variable `Absenteeism_time_in_hours` avec trois estimateurs de densité (Histogramme, Polygone de fréquence, Estimateur à noyau gaussien), renforcés par la technique du **bagging**.
 
 ### Résultats des erreurs :
@@ -38,12 +38,12 @@ Nous avons estimé la distribution de la variable `Absenteeism_time_in_hours` av
 | Polygone de fréquence   | 0.023   |
 | Estimateur à noyau      | 0.072   |
 
-👉 Le **Polygone de fréquence** est le meilleur estimateur.
+ Le **Polygone de fréquence** est le meilleur estimateur.
 
 
 ---
 
-## 🤖 Classification
+## Classification
 La variable cible a été transformée en **classes binaires** :
 - **Classe A** : Absences < 4.293h  
 - **Classe B** : Absences ≥ 4.293h  
@@ -59,7 +59,7 @@ La variable cible a été transformée en **classes binaires** :
 | AdaBoostM1 JRip (100)   | 79.74%   | 0.795     | 0.797  | 0.847    |
 | RandomForest            | 81.03%   | 0.807     | 0.810  | 0.879    |
 
-👉 **Meilleur modèle : Bagging J48 (100)**  
+ **Meilleur modèle : Bagging J48 (100)**  
 
 ### Cas 2 : Jeu de données équilibré
 | Modèle                  | Accuracy | Précision | Rappel | ROC Area |
@@ -72,13 +72,13 @@ La variable cible a été transformée en **classes binaires** :
 | AdaBoostM1 JRip (100)   | 80.47%   | 0.805     | 0.805  | 0.872    |
 | RandomForest            | 80.71%   | 0.810     | 0.807  | 0.882    |
 
-👉 **Meilleur modèle : Bagging JRip (100)**  
+ **Meilleur modèle : Bagging JRip (100)**  
 
 ![ROC Curves](images/roc_curves.png)
 
 ---
 
-## 📊 Règles d’association
+## Règles d’association
 Quelques règles extraites avec **JRip** :  
 
 1. `(transportation.expense >=235) AND (Age <=33) AND (Disciplinary.failure=0) → Classe B`  
@@ -87,11 +87,11 @@ Quelques règles extraites avec **JRip** :
 4. `(Weight <=67.99) AND (Work.load.Average.day >=264.60) AND (Age>=41) → Classe B`  
 5. `(Reason.for.absence=13) AND (Service.time>=11) → Classe B`  
 
-👉 La **raison d’absence** et **l’âge** apparaissent comme variables très discriminantes.  
+ La **raison d’absence** et **l’âge** apparaissent comme variables très discriminantes.  
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 - Les valeurs aberrantes faussent fortement les moyennes et perturbent les classifieurs.  
 - Après nettoyage, le **Bagging JRip (100)** est le modèle le plus performant.  
 - Les règles d’association montrent que certains profils (jeunes, forte dépense transport, raisons médicales) sont plus susceptibles de dépasser 4h d’absence.  
